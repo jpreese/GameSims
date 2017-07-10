@@ -1,5 +1,4 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.Linq;
 
 namespace TicTacToe.Models
@@ -7,12 +6,10 @@ namespace TicTacToe.Models
     public class Player
     {
         public readonly OccupationType Occupation;
-        public List<Space> Moves;
 
         public Player(OccupationType occupation)
         {
             Occupation = occupation;
-            Moves = new List<Space>();
         }
 
         public void TakeTurn(Board board)
