@@ -1,4 +1,5 @@
 ﻿using System.Collections.Generic;
+using System.Linq;
 
 namespace TicTacToe.Models
 {
@@ -24,17 +25,7 @@ namespace TicTacToe.Models
 
         public List<Space> GetFreeSpaces()
         {
-            var freeSpaces = new List<Space>();
-
-            for (int x = 0; x < BOARD_SIZE; x++)
-            {
-                if(Spaces[x].OccupiedBy == OccupationType.Empty)
-                {
-                    freeSpaces.Add(Spaces[x]);
-                }
-            }
-
-            return freeSpaces;
+            return Spaces.Where(s => s.OccupiedBy == OccupationType.Empty).ToList();
         }
     }
 }
