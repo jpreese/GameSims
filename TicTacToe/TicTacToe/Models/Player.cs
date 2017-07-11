@@ -9,6 +9,11 @@ namespace TicTacToe.Models
 
         public Player(OccupationType occupation)
         {
+            if(occupation == OccupationType.Empty)
+            {
+                throw new ArgumentException("A player cannot be an empty space.");
+            }
+
             Occupation = occupation;
         }
 
