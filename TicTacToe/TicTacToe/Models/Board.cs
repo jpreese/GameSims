@@ -34,6 +34,71 @@ namespace TicTacToe.Models
             return freeSpaces.ElementAt(randomSpaceIndex);
         }
 
+        public bool HasWinner()
+        {
+            if (CheckRowConditions())
+            {
+                return true;
+            }
+
+            if (CheckColumnConditions())
+            {
+                return true;
+            }
+
+            if (CheckDiagonalConditions())
+            {
+                return true;
+            }
+
+            return false;
+        }
+        private bool CheckRowConditions()
+        {
+            for (int x = 0; x <= 6; x += 3)
+            {
+                if (AllSpacesOwnedByPlayer(Spaces[x], Spaces[x + 1], Spaces[x + 2]))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private bool CheckColumnConditions()
+        {
+            for (int x = 0; x < 3; x++)
+            {
+                if (AllSpacesOwnedByPlayer(Spaces[x], Spaces[x + 3], Spaces[x + 6]))
+                {
+                    return true;
+                }
+            }
+
+            return false;
+        }
+
+        private bool CheckDiagonalConditions()
+        {
+            if (AllSpacesOwnedByPlayer(Spaces[0], Spaces[4], Spaces[8]))
+            {
+                return true;
+            }
+
+            if (AllSpacesOwnedByPlayer(Spaces[2], Spaces[4], Spaces[6]))
+            {
+                return true;
+            }
+
+            return false;
+        }
+
+        private bool AllSpacesOwnedByPlayer(Space A, Space B, Space C)
+        {
+            return (A.OccupiedBy == B.OccupiedBy && B.OccupiedBy == C.OccupiedBy) && A.OccupiedBy != OccupationType.Empty;
+        }
+
         private List<Space> GetFreeSpaces()
         {
             return Spaces.Where(s => s.OccupiedBy == OccupationType.Empty).ToList();

@@ -48,7 +48,6 @@
     <Compile Include="Models\OccupationType.cs" />
     <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Space.cs" />
-    <Compile Include="PlayerHasWonExtension.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>

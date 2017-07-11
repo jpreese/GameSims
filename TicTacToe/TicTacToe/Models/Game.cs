@@ -26,13 +26,13 @@ namespace TicTacToe.Models
             {
                 currentPlayer.TakeTurn(board);
 
-                if(currentPlayer.HasWon(board))
+                if(board.HasWinner())
                 {
-                    Console.WriteLine(string.Format("{0} has won.", currentPlayer.Occupation));
+                    Console.WriteLine("{0} has won.", currentPlayer.Occupation);
                     break;
                 }
 
-                if(board.IsFull())
+                if (board.IsFull())
                 {
                     Console.WriteLine("Draw.");
                     break;
@@ -40,6 +40,7 @@ namespace TicTacToe.Models
 
                 ChangePlayer();
             }
+
         }
 
         private void ChangePlayer()
