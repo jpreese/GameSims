@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace TicTacToe.Models
 {
@@ -23,7 +24,17 @@ namespace TicTacToe.Models
             return GetFreeSpaces().Count == 0;
         }
 
-        public List<Space> GetFreeSpaces()
+        public Space GetRandomFreeSpace()
+        {
+            var freeSpaces = GetFreeSpaces();
+
+            var random = new Random();
+            var randomSpaceIndex = random.Next(0, freeSpaces.Count);
+
+            return freeSpaces.ElementAt(randomSpaceIndex);
+        }
+
+        private List<Space> GetFreeSpaces()
         {
             return Spaces.Where(s => s.OccupiedBy == OccupationType.Empty).ToList();
         }
