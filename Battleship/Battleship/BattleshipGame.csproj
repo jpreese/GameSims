@@ -45,6 +45,7 @@
   <ItemGroup>
     <Compile Include="Enums\OccupationType.cs" />
     <Compile Include="Models\Boards\Board.cs" />
+    <Compile Include="Models\Player.cs" />
     <Compile Include="Models\Ships\Battleship.cs" />
     <Compile Include="Models\Ships\Carrier.cs" />
     <Compile Include="Models\Boards\Coordinate.cs" />

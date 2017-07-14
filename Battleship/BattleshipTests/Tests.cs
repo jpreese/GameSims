@@ -1,7 +1,8 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
-using Battleship.Models.Boards;
-using Battleship.Models.Ships;
-using Battleship.Enums;
+using BattleshipGame.Models.Boards;
+using BattleshipGame.Models.Ships;
+using BattleshipGame.Enums;
+using BattleshipGame.Models;
 
 namespace BattleshipTests
 {
@@ -19,12 +20,33 @@ namespace BattleshipTests
         }
 
         [TestMethod]
-        public void NewCarrierShipHasCorrectDefaults()
+        public void NewShipHasCorrectDefaults()
         {
             var sut = new Carrier();
 
             Assert.AreEqual(sut.OccupationType, OccupationType.Carrier);
             Assert.AreEqual(sut.Size, 5);
+        }
+
+        [TestMethod]
+        public void ShipCanBeSunk()
+        {
+            var sut = new Carrier();
+
+            for(int x = 0; x < sut.Size; x++)
+            {
+                sut.AddHit();
+            }
+
+            Assert.IsTrue(sut.IsSunk());
+        }
+
+        [TestMethod]
+        public void NewPlayerHasNotLost()
+        {
+            var sut = new Player();
+
+            Assert.IsFalse(sut.HasLost());
         }
     }
 }

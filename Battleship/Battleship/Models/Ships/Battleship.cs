@@ -1,6 +1,6 @@
-﻿using Battleship.Enums;
+﻿using BattleshipGame.Enums;
 
-namespace Battleship.Models.Ships
+namespace BattleshipGame.Models.Ships
 {
     public class Battleship : Ship
     {
