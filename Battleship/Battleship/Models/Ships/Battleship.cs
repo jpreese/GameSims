@@ -2,15 +2,15 @@
 
 namespace Battleship.Models.Ships
 {
-    public class Carrier : Ship
+    public class Battleship : Ship
     {
         public override OccupationType OccupationType { get; protected set; }
         public override int Size { get; protected set; }
 
-        public Carrier()
+        public Battleship()
         {
-            OccupationType = OccupationType.Carrier;
-            Size = 5;
+            OccupationType = OccupationType.Battleship;
+            Size = 4;
         }
     }
 }

@@ -1,16 +1,17 @@
-﻿using Battleship.Enums;
+﻿using System;
+using Battleship.Enums;
 
 namespace Battleship.Models.Ships
 {
-    public class Carrier : Ship
+    public class Submarine : Ship
     {
         public override OccupationType OccupationType { get; protected set; }
         public override int Size { get; protected set; }
 
-        public Carrier()
+        public Submarine()
         {
-            OccupationType = OccupationType.Carrier;
-            Size = 5;
+            OccupationType = OccupationType.Submarine;
+            Size = 3;
         }
     }
 }

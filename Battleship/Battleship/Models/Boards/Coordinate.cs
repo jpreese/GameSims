@@ -1,11 +1,11 @@
 ﻿namespace Battleship.Models.Boards
 {
-    public class Coordinate
+    public class Coordinates
     {
         public readonly int X;
         public readonly int Y;
 
-        public Coordinate(int x, int y)
+        public Coordinates(int x, int y)
         {
             X = x;
             Y = y;

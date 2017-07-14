@@ -2,11 +2,11 @@
 {
     public class Square
     {
-        public readonly Coordinate Coordinate;
+        public readonly Coordinates Coordinates;
 
-        public Square(Coordinate coordinate)
+        public Square(Coordinates coordinates)
         {
-            Coordinate = coordinate;
+            Coordinates = coordinates;
         }
     }
 }

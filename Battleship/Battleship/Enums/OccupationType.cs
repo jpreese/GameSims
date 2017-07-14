@@ -2,6 +2,10 @@
 {
     public enum OccupationType
     {
-        Carrier
+        Carrier,
+        Battleship,
+        Cruiser,
+        Submarine,
+        Destroyer
     }
 }
