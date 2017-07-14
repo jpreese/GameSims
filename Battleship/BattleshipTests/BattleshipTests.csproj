@@ -54,9 +54,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Battleship\Battleship.csproj">
+    <ProjectReference Include="..\Battleship\BattleshipGame.csproj">
       <Project>{3867f35a-f80c-4358-9f9d-0ebf5f70e07d}</Project>
-      <Name>Battleship</Name>
+      <Name>BattleshipGame</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

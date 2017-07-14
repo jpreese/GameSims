@@ -1,4 +1,4 @@
-﻿namespace Battleship.Enums
+﻿namespace BattleshipGame.Enums
 {
     public enum OccupationType
     {

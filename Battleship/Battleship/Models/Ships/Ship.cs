@@ -1,17 +1,22 @@
-﻿using Battleship.Enums;
+﻿using BattleshipGame.Enums;
 
-namespace Battleship.Models.Ships
+namespace BattleshipGame.Models.Ships
 {
     public abstract class Ship
     {
         public abstract OccupationType OccupationType { get; protected set; }
         public abstract int Size { get; protected set; }
 
-        public int Hits { get; set; }
+        private int _hits;
+
+        public void AddHit()
+        {
+            _hits++;
+        }
 
         public bool IsSunk()
         {
-            return Hits >= Size;
+            return _hits >= Size;
         }
     }
 }

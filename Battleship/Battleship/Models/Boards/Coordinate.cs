@@ -1,4 +1,4 @@
-﻿namespace Battleship.Models.Boards
+﻿namespace BattleshipGame.Models.Boards
 {
     public class Coordinates
     {

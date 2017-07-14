@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace Battleship.Models.Boards
+namespace BattleshipGame.Models.Boards
 {
     public abstract class Board
     {
