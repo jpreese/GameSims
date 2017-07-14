@@ -15,7 +15,7 @@ namespace Battleship.Models.Boards
             {
                 for (int y = 0; y < BOARD_SIZE; y++)
                 {
-                    Squares.Add(new Square(new Coordinate(x, y)));
+                    Squares.Add(new Square(new Coordinates(x, y)));
                 }
             }
         }

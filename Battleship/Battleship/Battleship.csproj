@@ -45,12 +45,16 @@
   <ItemGroup>
     <Compile Include="Enums\OccupationType.cs" />
     <Compile Include="Models\Boards\Board.cs" />
+    <Compile Include="Models\Ships\Battleship.cs" />
     <Compile Include="Models\Ships\Carrier.cs" />
     <Compile Include="Models\Boards\Coordinate.cs" />
     <Compile Include="Models\Boards\FiringBoard.cs" />
     <Compile Include="Models\Boards\GameBoard.cs" />
+    <Compile Include="Models\Ships\Cruiser.cs" />
+    <Compile Include="Models\Ships\Destroyer.cs" />
     <Compile Include="Models\Ships\Ship.cs" />
     <Compile Include="Models\Boards\Square.cs" />
+    <Compile Include="Models\Ships\Submarine.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
