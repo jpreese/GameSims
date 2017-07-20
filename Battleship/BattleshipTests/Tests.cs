@@ -3,6 +3,7 @@ using BattleshipGame.Models.Boards;
 using BattleshipGame.Models.Ships;
 using BattleshipGame.Enums;
 using BattleshipGame.Models;
+using System.Linq;
 
 namespace BattleshipTests
 {
@@ -47,6 +48,30 @@ namespace BattleshipTests
             var sut = new Player();
 
             Assert.IsFalse(sut.HasLost());
+        }
+
+        [TestMethod]
+        public void RandomFreeSpaceIsNotNull()
+        {
+            var sut = new GameBoard();
+            var space = sut.GetRandomFreeSquare();
+
+            Assert.IsNotNull(space.Coordinates.X);
+            Assert.IsNotNull(space.Coordinates.Y);
+        }
+
+        [TestMethod]
+        public void FindAllHorizontalFreeSpaces()
+        {
+            var sut = new GameBoard();
+
+            var carrierFreeRanges = sut.GetAllFreeRandomRanges(new Carrier().Size);
+            var battleshipFreeRanges = sut.GetAllFreeRandomRanges(new Battleship().Size);
+            var cruiserFreeRanges = sut.GetAllFreeRandomRanges(new Cruiser().Size);
+
+            Assert.AreEqual(carrierFreeRanges.Count(), 60);
+            Assert.AreEqual(battleshipFreeRanges.Count(), 70);
+            Assert.AreEqual(cruiserFreeRanges.Count(), 80);
         }
     }
 }

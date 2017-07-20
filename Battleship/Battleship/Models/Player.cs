@@ -24,6 +24,19 @@ namespace BattleshipGame.Models
             return Ships.All(s => s.IsSunk());
         }
 
+        public void PlaceAllShipsOnGameBoard()
+        {
+            foreach(var ship in Ships)
+            {
+                PlaceShipOnGameBoard(ship);
+            }
+        }
+
+        private void PlaceShipOnGameBoard(Ship ship)
+        {
+            var randomFreeSquare = GameBoard.GetRandomFreeSquare();
+        }
+
         private List<Ship> GetShips()
         {
             var ships = new List<Ship>();
