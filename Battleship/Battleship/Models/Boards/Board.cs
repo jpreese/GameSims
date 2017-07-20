@@ -34,7 +34,7 @@ namespace BattleshipGame.Models.Boards
             return freeSquares.ElementAt(randomFreeIndex);
         }
 
-        public List<IEnumerable<Square>> GetAllFreeRandomRanges(int rangeSize)
+        public List<IEnumerable<Square>> GetAllFreeRandomHorizontalRanges(int rangeSize)
         {
             return FindAllFreeHorizontalRanges(rangeSize);
         }

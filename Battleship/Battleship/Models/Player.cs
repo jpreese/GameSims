@@ -2,6 +2,7 @@
 using BattleshipGame.Models.Boards;
 using System.Collections.Generic;
 using System.Linq;
+using System;
 
 namespace BattleshipGame.Models
 {
@@ -34,7 +35,10 @@ namespace BattleshipGame.Models
 
         private void PlaceShipOnGameBoard(Ship ship)
         {
-            var randomFreeSquare = GameBoard.GetRandomFreeSquare();
+            var freeRanges = GameBoard.GetAllFreeRandomHorizontalRanges(ship.Size);
+
+            var random = new Random();
+            var randomFreeRangeIndex = random.Next(0, freeRanges.Count);
         }
 
         private List<Ship> GetShips()

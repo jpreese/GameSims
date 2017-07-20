@@ -65,13 +65,15 @@ namespace BattleshipTests
         {
             var sut = new GameBoard();
 
-            var carrierFreeRanges = sut.GetAllFreeRandomRanges(new Carrier().Size);
-            var battleshipFreeRanges = sut.GetAllFreeRandomRanges(new Battleship().Size);
-            var cruiserFreeRanges = sut.GetAllFreeRandomRanges(new Cruiser().Size);
+            var carrierFreeRanges = sut.GetAllFreeRandomHorizontalRanges(new Carrier().Size);
+            var battleshipFreeRanges = sut.GetAllFreeRandomHorizontalRanges(new Battleship().Size);
+            var cruiserFreeRanges = sut.GetAllFreeRandomHorizontalRanges(new Cruiser().Size);
+            var destroyerFreeRanges = sut.GetAllFreeRandomHorizontalRanges(new Destroyer().Size);
 
             Assert.AreEqual(carrierFreeRanges.Count(), 60);
             Assert.AreEqual(battleshipFreeRanges.Count(), 70);
             Assert.AreEqual(cruiserFreeRanges.Count(), 80);
+            Assert.AreEqual(destroyerFreeRanges.Count(), 90);
         }
     }
 }
